@@ -8,20 +8,38 @@
   const btnElem = document.getElementById("searchBtn");
   // console.log(searchElem);
   const listElem = document.getElementById("recipe-list");
-  console.log(listElem);
-  // display to Ui
-  function displaySearchResult(results) {
+  //console.log(listElem);
+  const detailsElem = document.getElementById("recipeDetailsContainer")
+
+  // Load Details 
+    function loadRecipesDetails(recipe){
+        //console.log(recipe);
+        detailsElem.innerHTML = `
+        <h2 class="title">${recipe.title}</h2>
+        <h3>Ingredients:</h3>
+        <ul>${recipe.ingredients.map(function (ingredient) {
+          return "<li>" + ingredient + "</li>"
+        }).join("")}</ul>
+        <h3>Instruction:</h3>
+        <div>${recipe.instructions}</div>
+    `;
+    }
+
+// display to Ui
+function displaySearchResult (results) {
     listElem.innerHTML = "";
     results.forEach(function (recipe) {
-      // console.log(recipe);
       const li = document.createElement("li");
       const listItem = `
-            <h4>${recipe.title}</h4>
-            <div>${recipe.description}</div>
-            `;
+          <h2 class="title">${recipe.title}</h2>
+          <div class="description">${recipe.description}</div>
+      `;
       li.innerHTML = listItem;
+      li.addEventListener("click", function () {
+        loadRecipesDetails(recipe);
+      });
       listElem.appendChild(li);
-    });
+    })
   }
 
   // Search in JAVASCRIPT

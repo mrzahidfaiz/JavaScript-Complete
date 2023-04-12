@@ -11,8 +11,10 @@ header {
   top: 0;
   height: 38px;
   padding: 20px;
-  background-color: #cac4c4;
+  /* background-color: #cac4c4;  */
+  background-color: teal; 
   display: flex;
+  /* justify-content: space-between; */
   justify-content: space-between;
 }
 
@@ -39,6 +41,7 @@ header h1 {
   border-radius: 10px;
   padding: 12px;
   min-width: 120px;
+  cursor: pointer;
 }
 
 main {
@@ -68,6 +71,7 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+  cursor: pointer;
 }
 
 #recipe-list {
