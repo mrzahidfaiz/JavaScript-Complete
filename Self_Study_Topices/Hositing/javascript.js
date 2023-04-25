@@ -61,3 +61,39 @@
 
 
 
+// More Advanced Example
+
+
+// var x = 3;
+
+// function getName(){
+//     console.log("Muhammad Zahid");
+// }
+
+// getName(); //invoked
+// console.log(x); // Every Thing Works Fine
+
+// Lets Check Again
+
+
+
+// getName();  // invoked before create it
+// console.log(x); // invoked before create it
+
+
+// var x = 3; // x = undefined by compailer itself 
+
+// function getName(){
+//     console.log('Muhammad ZAhid')
+// }
+
+
+getName();  // invoked before create it
+console.log(x); // invoked before create it // Now it is x is not defined
+
+
+
+
+function getName(){
+    console.log('Muhammad ZAhid')
+}
